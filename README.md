@@ -1,8 +1,8 @@
-# Docker tutorial
+# Docker Development
 
 This repository comes with the blog article [From Vagrant to Docker: How to use Docker for local web development](http://blog.osteel.me/posts/2015/12/18/from-vagrant-to-docker-how-to-use-docker-for-local-web-development.html "From Vagrant to Docker: How to use Docker for local web development"). Please refer to it for a full explanation.
 
-It contains a basic LEMP stack running with Docker, intented to be used for local web development.
+It contains a basic LEMP stack running with Docker, intended to be used for local web development.
 
 ## Get started
 
@@ -10,7 +10,7 @@ It contains a basic LEMP stack running with Docker, intented to be used for loca
 
 Clone the project:
 
-    $ git clone git@github.com:osteel/docker-tutorial.git
+    $ git clone https://github.com/Zweer/docker-development.git
 
 From the project root:
 
@@ -24,7 +24,7 @@ Access it from your browser.
 
 ## Description
 
-The different containers are described in [`docker-compose.yml`](https://github.com/osteel/docker-tutorial/blob/master/docker-compose.yml).
+The different containers are described in [`docker-compose.yml`](https://github.com/Zweer/docker-development/blob/master/docker-compose.yml).
 
 There are 6 of them:
 
@@ -37,9 +37,9 @@ There are 6 of them:
 
 All of them are using official images.
 
-When building and starting containers for the first time with Docker Compose, a database named `project` will be created by default. You can change this in [`docker-compose.yml`](https://github.com/osteel/docker-tutorial/blob/master/docker-compose.yml).
+When building and starting containers for the first time with Docker Compose, a database named `project` will be created by default. You can change this in [`docker-compose.yml`](https://github.com/Zweer/docker-development/blob/master/docker-compose.yml).
 
-A [default Nginx configuration](https://github.com/osteel/docker-tutorial/blob/master/nginx/default.conf) is also copied over.
+A [default Nginx configuration](https://github.com/Zweer/docker-development/blob/master/nginx/default.conf) is also copied over.
 
 The current directory is mounted into the one served by Nginx on the container, so any update to the code is available without having to rebuild the container.
 
