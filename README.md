@@ -12,9 +12,10 @@ Clone the project:
 
     $ git clone https://github.com/Zweer/docker-development.git
     
-Start Docker machine:
+Start Docker machine and "env" it:
 
     $ docker-machine start default
+    $ eval $(docker-machine env default)
 
 From the project root:
 
