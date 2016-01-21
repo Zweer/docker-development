@@ -11,6 +11,10 @@ It contains a basic LEMP stack running with Docker, intended to be used for loca
 Clone the project:
 
     $ git clone https://github.com/Zweer/docker-development.git
+    
+Start Docker machine:
+
+    $ docker-machine start default
 
 From the project root:
 
