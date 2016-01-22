@@ -44,3 +44,4 @@ phpmyadmin:
         - mysql
     environment:
         PMA_HOST: mysql
+    command: "true"
