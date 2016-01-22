@@ -1,4 +1,5 @@
 nginx:
+    container_name: nginx
     build: ./nginx/
     ports:
         - 80:80
@@ -9,6 +10,7 @@ nginx:
         - data-www
 
 php:
+    container_name: php
     build: ./php/
     expose:
         - 9000
@@ -18,12 +20,14 @@ php:
         - data-www
 
 data-www:
+    container_name: data-www
     image: busybox:latest
     volumes:
         - ~/Movies/html:/var/www/html
     command: "true"
 
 mysql:
+    container_name: mysql
     image: mysql:latest
     volumes_from:
         - data-db
@@ -31,12 +35,14 @@ mysql:
         MYSQL_ROOT_PASSWORD: secret
 
 data-db:
+    container_name: data-db
     image: busybox:latest
     volumes:
         - /var/lib/mysql
     command: "true"
 
 phpmyadmin:
+    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
     ports:
         - 8080:8080
