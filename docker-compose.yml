@@ -5,7 +5,7 @@ nginx:
     links:
         - php
     volumes_from:
-        - app
+        - data-www
 
 php:
     build: ./php/
@@ -14,23 +14,23 @@ php:
     links:
         - mysql
     volumes_from:
-        - app
+        - data-www
 
-app:
-    image: php:7.0-fpm
+data-www:
+    image: busybox:latest
     volumes:
-        - .:/var/www/html
+        - ~/Movies/html:/var/www/html
     command: "true"
 
 mysql:
     image: mysql:latest
     volumes_from:
-        - data
+        - data-db
     environment:
         MYSQL_ROOT_PASSWORD: secret
 
-data:
-    image: mysql:latest
+data-db:
+    image: busybox:latest
     volumes:
         - /var/lib/mysql
     command: "true"
