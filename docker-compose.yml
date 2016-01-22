@@ -1,11 +1,13 @@
 nginx:
     container_name: nginx
-    build: ./nginx/
+    image: nginx:latest
     ports:
         - 80:80
         - 443:443
     links:
         - php
+    volumes:
+        - ./nginx/conf.d:/etc/nginx/conf.d
     volumes_from:
         - data-www
 
